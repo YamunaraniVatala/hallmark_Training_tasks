@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter-list</title>
+    <style>
+         body{
+            background-image: url('./car3.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 1400px,1200px;}
+           
+         .main_div{
+            height: 600px;
+            width: 500px;
+            
+            /* border: 1px solid black; */
+            overflow: hidden;
+            /* overflow-y: scroll; */
+            background-color: transparent;
+        }
+        li{
+            border: 0.5px solid black;
+            height: 40px;
+            width: 300px;
+            text-align: center; 
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #006663;
+            margin-left: 25px; 
+            color: white;
+        }
+        input{
+            height: 30px;
+            width: 295px;
+            margin-left: 25px;
+        }
+        ul{
+            list-style-type: none;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0px
+        }
+        h3{
+            /* border: 0.5px solid blue; */
+            color: white;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+          
+        li img{
+            height: 40px;
+            width: 50px;
+        } 
+
+        
+         
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <h3>Please Enter Your Search for your favourite car Brands </h3>
+        <input name="search" placeholder="Search..." />
+        <ul>
+        </ul></div>
+        <script>
+            input = document.querySelector('input')
+    
+            list1 = [
+                {'title':'tesla','img':"https://www.carlogos.org/car-logos/tesla-logo-2200x2800.png",'price':500},
+                {'title':'Audi','img':"https://www.carlogos.org/car-logos/audi-logo.png"},
+                {'title': 'Ford','img':"https://www.carlogos.org/car-logos/ford-logo.png"},
+                {'title':'BMW' , 'img':"https://www.carlogos.org/car-logos/bmw-logo.png"},
+                { 'title':'Ferrari','img':"https://www.carlogos.org/car-logos/ferrari-logo.png"},
+                { 'title' :'Porsche', 'img':"https://www.carlogos.org/car-logos/porsche-logo.png"},
+                { 'title' :'lamborghini', 'img':"https://www.carlogos.org/car-logos/lamborghini-logo.png"},
+                { 'title' :'suzuki', 'img':"https://www.carlogos.org/car-logos/suzuki-logo.png"},
+                { 'title' :'bentley', 'img':"https://www.carlogos.org/car-logos/bentley-logo.png"},
+                { 'title' :'maserati', 'img':"https://www.carlogos.org/car-logos/maserati-logo.png"},
+                { 'title' :'jeep', 'img':"https://www.carlogos.org/car-logos/jeep-logo.png"},
+                { 'title' :'subaru', 'img':"https://www.carlogos.org/car-logos/subaru-logo.png"},
+                { 'title' :'cadillac', 'img':"https://www.carlogos.org/car-logos/cadillac-logo.png"},
+                { 'title' :'chrysler', 'img':"https://www.carlogos.org/car-logos/chrysler-logo.png"},
+                { 'title' :'chevrolet corvette', 'img':"https://www.carlogos.org/car-logos/corvette-logo.png"},
+                { 'title' :'hyundai', 'img':"https://www.carlogos.org/car-logos/hyundai-logo.png"},
+                { 'title' :'jaguar', 'img':"https://www.carlogos.org/car-logos/jaguar-logo.png"},
+                { 'title' :'ford-mustang', 'img':"https://www.carlogos.org/car-logos/ford-mustang-logo.png"},
+
+                
+
+
+                
+            ]
+            input.addEventListener('input',filter)
+
+        function filter(){
+
+            
+        Ip= document.querySelector('input').value
+        // results = (list1.filter(item=> item.title.toLowerCase().includes(Ip.toLowerCase())))
+        // document.querySelector('ul').innerHTML= results.map(item=>"<li>"+item.title+" - <img src="+item.img+" alt='img'/>"+"</li>").join('');
+        if(Ip == ""){
+            document.querySelector('ul').innerHTML=""  
+         }
+         else{
+            results = (list1.filter(item=> item.title.toLowerCase().includes(Ip.toLowerCase())))
+        document.querySelector('ul').innerHTML= results.map(item=>"<li>"+item.title+" - <img src="+item.img+" alt='img'/>"+"</li>").join('');
+
+         }
+        
+        
+         } 
+         
+         
+           </script> 
+ </body>
+ </html>
